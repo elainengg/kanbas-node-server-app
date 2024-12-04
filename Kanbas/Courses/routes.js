@@ -10,10 +10,10 @@ export default function CourseRoutes(app) {
   });
  
 
-    app.put("/api/courses/:courseId", (req, res) => {
+    app.put("/api/courses/:courseId", async (req, res) => {
         const { courseId } = req.params;
         const courseUpdates = req.body;
-        const status = dao.updateCourse(courseId, courseUpdates);
+        const status = await dao.updateCourse(courseId, courseUpdates);
         res.send(status);
       });
     
