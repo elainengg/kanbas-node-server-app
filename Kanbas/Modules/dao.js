@@ -1,4 +1,4 @@
-import Database from "../Database/index.js";
+// import Database from "../Database/index.js";
 import model from "./model.js";
 export function findModulesForCourse(courseId) {
   return model.find({ course: courseId });
@@ -15,8 +15,9 @@ export function createModule(module) {
  }
  
   
-  export function deleteModule(moduleId) {
-    const { modules } = Database;
-    Database.modules = modules.filter((module) => module._id !== moduleId);
-   }
-   
+ export function deleteModule(moduleId) {
+  return model.deleteOne({ _id: moduleId });
+  // const { modules } = Database;
+  // Database.modules = modules.filter((module) => module._id !== moduleId);
+ }
+ 
