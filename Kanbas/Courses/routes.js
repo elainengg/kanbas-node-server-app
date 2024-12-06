@@ -5,7 +5,11 @@ import * as modulesDao from "../Modules/dao.js";
 import * as assignmentsDao from "../Assignments/dao.js";
 
 export default function CourseRoutes(app) {
-  
+  app.get("/api/courses", async (req, res) => {
+    const courses = await dao.findAllCourses();
+    res.send(courses);
+  });
+/*  
   app.post("/api/courses", async (req, res) => {
     const course = await dao.createCourse(req.body);
     const currentUser = req.session["currentUser"];
@@ -24,10 +28,6 @@ export default function CourseRoutes(app) {
         res.send(status);
       });
     
-  app.get("/api/courses", async (req, res) => {
-    const courses = await dao.findAllCourses();
-    res.send(courses);
-  });
 
   app.delete("/api/courses/:courseId", async (req, res) => {
     const { courseId } = req.params;
@@ -94,6 +94,6 @@ const findCoursesForEnrolledUser = (req, res) => {
   app.get("/api/courses/:cid/users", findUsersForCourse);
 
   
-
+*/
 
 }

@@ -1,23 +1,23 @@
 // import Database from "../Database/index.js";
 import model from "./model.js";
 
-export function updateModule(moduleId, moduleUpdates) {
-    const { modules } = Database;
-    const module = modules.find((module) => module._id === moduleId);
-    Object.assign(module, moduleUpdates);
-    return module;
-  }
+// export function updateModule(moduleId, moduleUpdates) {
+//     const { modules } = Database;
+//     const module = modules.find((module) => module._id === moduleId);
+//     Object.assign(module, moduleUpdates);
+//     return module;
+//   }
   
 export function findAllCourses() {
   return model.find();
 
 }
-export function findCoursesForEnrolledUser(userId) {
-    const { courses, enrollments } = Database;
-    const enrolledCourses = courses.filter((course) =>
-      enrollments.some((enrollment) => enrollment.user === userId && enrollment.course === course._id));
-    return enrolledCourses;
-  }
+// export function findCoursesForEnrolledUser(userId) {
+//     const { courses, enrollments } = Database;
+//     const enrolledCourses = courses.filter((course) =>
+//       enrollments.some((enrollment) => enrollment.user === userId && enrollment.course === course._id));
+//     return enrolledCourses;
+//   }
 
   export function createCourse(course) {
     delete course._id;

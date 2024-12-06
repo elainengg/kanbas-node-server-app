@@ -8,7 +8,7 @@ import session from "express-session";
 import "dotenv/config";
 import ModuleRoutes from "./Kanbas/Modules/routes.js";
 
-// import CourseRoutes from "./Kanbas/Courses/routes.js";
+import CourseRoutes from "./Kanbas/Courses/routes.js";
 
 import mongoose from "mongoose";
 
@@ -44,7 +44,7 @@ app.use(session(sessionOptions));
 app.use(express.json());
 
 UserRoutes(app);
-// CourseRoutes(app);
+CourseRoutes(app);
 ModuleRoutes(app);
 
 
