@@ -9,7 +9,6 @@ export default function CourseRoutes(app) {
     const courses = await dao.findAllCourses();
     res.send(courses);
   });
-/*  
   app.post("/api/courses", async (req, res) => {
     const course = await dao.createCourse(req.body);
     const currentUser = req.session["currentUser"];
@@ -20,7 +19,7 @@ export default function CourseRoutes(app) {
     res.json(course);
   });
  
-
+/*
     app.put("/api/courses/:courseId", async (req, res) => {
         const { courseId } = req.params;
         const courseUpdates = req.body;
